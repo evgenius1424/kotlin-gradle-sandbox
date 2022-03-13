@@ -8,4 +8,7 @@ dependencies {
 
     implementation(Dependencies.Ktor.ktorCore)
     implementation(Dependencies.Ktor.ktorServerNettyJvm)
+
+    implementation(Dependencies.Koin.koinCore)
+    integrationTestImplementation(Dependencies.Koin.koinTest)
 }
