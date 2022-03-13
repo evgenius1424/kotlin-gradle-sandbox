@@ -1,3 +1,3 @@
 rootProject.name = "kotlin-gradle-sandbox"
 
-include(":core", "server")
+include(":core-api", "core-impl", "server")

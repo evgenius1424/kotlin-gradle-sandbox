@@ -3,11 +3,11 @@ package com.github.evgenius1424
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-internal class UserIntegrationTest {
+internal class EmployeeIntegrationTest {
 
     @Test
     fun `user should have a name`() {
-        val user = User("Jack")
-        assertThat(user.name).isEqualTo("Jack")
+        val employee = Employee("Jack")
+        assertThat(employee.name).isEqualTo("Jack")
     }
 }
