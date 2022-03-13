@@ -11,3 +11,4 @@ internal class UserTest {
         assertThat(user.name).isEqualTo("Jack")
     }
 }
+

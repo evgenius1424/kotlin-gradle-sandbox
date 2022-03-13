@@ -6,7 +6,7 @@ plugins {
 }
 
 /*
-* Copied without changes from documentation
+* Documentation
 * https://docs.gradle.org/current/userguide/jvm_test_suite_plugin.html
 *  */
 testing {
@@ -43,5 +43,3 @@ tasks.named("check") {
 val integrationTestImplementation: Configuration by configurations.getting {
     extendsFrom(configurations.testImplementation.get())
 }
-
-
