@@ -7,4 +7,5 @@ plugins {
     id("com.github.evgenius1424.ktlint-conventions")
     id("com.github.evgenius1424.detekt-conventions")
     id("com.github.evgenius1424.repositories-conventions")
+    id("com.github.evgenius1424.publishing-conventions")
 }

@@ -9,9 +9,9 @@ internal class SmartCompanyTest {
     fun `add employee to company`() {
         val employee = Employee("Jack")
 
-        val company = SmartCompany()
-
-        company.addEmployee(employee)
+        val company = SmartCompany().apply {
+            addEmployee(employee)
+        }
 
         assertThat(company.getEmployees()).containsExactly(employee)
     }
