@@ -3,7 +3,7 @@ package com.github.evgenius1424
 import com.github.evgenius1424.di.applicationModule
 import com.github.evgenius1424.plugins.configureRouting
 import com.github.evgenius1424.plugins.configureSerialization
-import io.ktor.server.application.Application
+import io.ktor.application.Application
 import io.ktor.server.netty.EngineMain
 import org.koin.core.context.GlobalContext.startKoin
 

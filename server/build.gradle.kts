@@ -7,11 +7,10 @@ dependencies {
     implementation(project(":core-impl"))
 
     implementation(Dependencies.Ktor.ktorCore)
-    implementation(Dependencies.Ktor.ktorServerNettyJvm)
-    implementation(Dependencies.Ktor.ktorServerContentNegotiation)
-    implementation(Dependencies.Ktor.ktorSerializationKotlinxJson)
+    implementation(Dependencies.Ktor.ktorServerNetty)
+    implementation(Dependencies.Ktor.ktorSerialization)
 
-    implementation(Dependencies.Koin.koinCore)
+    implementation(Dependencies.Koin.koinKtor)
 
     integrationTestImplementation(Dependencies.Koin.koinTest)
 }

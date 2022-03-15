@@ -1,9 +1,24 @@
 package com.github.evgenius1424.plugins
 
-import io.ktor.server.application.Application
-import io.ktor.server.routing.routing
+import com.github.evgenius1424.Company
+import io.ktor.application.Application
+import io.ktor.application.call
+import io.ktor.response.respond
+import io.ktor.routing.Routing
+import io.ktor.routing.get
+import io.ktor.routing.routing
+import org.koin.ktor.ext.inject
 
 fun Application.configureRouting() {
     routing {
+        v1()
+    }
+}
+
+private fun Routing.v1() {
+    val company by inject<Company>()
+
+    get("/api/v1/employees") {
+        call.respond(company.getEmployees())
     }
 }
