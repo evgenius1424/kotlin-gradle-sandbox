@@ -16,6 +16,7 @@ dependencies {
 
     implementation(Dependencies.Logging.logback)
 
+    integrationTestImplementation(Dependencies.Ktor.ktorServerTestHost)
     integrationTestImplementation(Dependencies.Koin.koinTest)
 }
 

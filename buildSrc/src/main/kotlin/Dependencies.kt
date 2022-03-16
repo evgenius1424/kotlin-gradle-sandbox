@@ -7,6 +7,7 @@ object Dependencies {
         const val ktorCore = "io.ktor:ktor-server-core:$version"
         const val ktorServerNetty = "io.ktor:ktor-server-netty:$version"
         const val ktorSerialization = "io.ktor:ktor-serialization:$version"
+        const val ktorServerTestHost = "io.ktor:ktor-server-test-host:$version"
     }
 
     object Koin {
