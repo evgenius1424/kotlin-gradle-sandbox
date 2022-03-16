@@ -1,5 +1,7 @@
+
 plugins {
     id("com.github.evgenius1424.kotlin-project-conventions")
+    id("com.github.evgenius1424.application-conventions")
 }
 
 dependencies {
@@ -12,5 +14,11 @@ dependencies {
 
     implementation(Dependencies.Koin.koinKtor)
 
+    implementation(Dependencies.Logging.logback)
+
     integrationTestImplementation(Dependencies.Koin.koinTest)
+}
+
+application {
+    mainClass.set("com.github.evgenius1424.ApplicationKt")
 }

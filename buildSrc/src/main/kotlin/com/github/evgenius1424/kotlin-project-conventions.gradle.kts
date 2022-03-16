@@ -9,4 +9,5 @@ plugins {
     id("com.github.evgenius1424.repositories-conventions")
     id("com.github.evgenius1424.publishing-conventions")
     id("com.github.evgenius1424.serialization-conventions")
+    id("com.github.evgenius1424.jacoco-conventions")
 }

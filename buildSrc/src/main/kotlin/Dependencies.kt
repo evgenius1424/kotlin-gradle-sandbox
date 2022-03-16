@@ -16,6 +16,10 @@ object Dependencies {
         const val koinTest = "io.insert-koin:koin-test-junit5:$version"
     }
 
+    object Logging {
+        const val logback = "ch.qos.logback:logback-classic:1.3.0-alpha14"
+    }
+
     object JUnit {
         const val version = "5.8.1"
         const val api = "org.junit.jupiter:junit-jupiter-api:$version"
