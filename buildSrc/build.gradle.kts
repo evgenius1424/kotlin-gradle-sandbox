@@ -10,6 +10,7 @@ object Plugins {
     const val detektPlugin = "io.gitlab.arturbosch.detekt:detekt-gradle-plugin:1.19.0"
     const val kotlinSerializationPlugin = "org.jetbrains.kotlin:kotlin-serialization:1.6.0"
     const val shadowPlugin = "gradle.plugin.com.github.jengelman.gradle.plugins:shadow:7.0.0"
+    const val artifactoryPlugin = "org.jfrog.buildinfo:build-info-extractor-gradle:latest.release"
 }
 
 dependencies {
@@ -18,4 +19,5 @@ dependencies {
     implementation(Plugins.detektPlugin)
     implementation(Plugins.kotlinSerializationPlugin)
     implementation(Plugins.shadowPlugin)
+    implementation(Plugins.artifactoryPlugin)
 }
