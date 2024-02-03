@@ -1,4 +1,4 @@
-package com.github.evgenius1424.plugins
+package com.github.evgenius1424
 
 import io.ktor.application.Application
 import io.ktor.application.install

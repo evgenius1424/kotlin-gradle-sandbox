@@ -1,6 +1,5 @@
-package com.github.evgenius1424.plugins
+package com.github.evgenius1424
 
-import com.github.evgenius1424.Company
 import io.ktor.application.Application
 import io.ktor.application.call
 import io.ktor.response.respond
