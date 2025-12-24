@@ -1,4 +1,4 @@
-package com.github.evgenius1424
+package io.github.evgenius1424.kotlingradle
 
 import kotlinx.serialization.Serializable
 

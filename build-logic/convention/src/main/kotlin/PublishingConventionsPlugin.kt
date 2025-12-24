@@ -13,7 +13,7 @@ class PublishingConventionsPlugin : Plugin<Project> {
                 apply("com.jfrog.artifactory")
             }
 
-            group = "com.github.evgenius1424"
+            group = "io.github.evgenius1424"
             version = "1.0"
 
             configure<PublishingExtension> {

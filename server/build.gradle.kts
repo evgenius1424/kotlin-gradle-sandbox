@@ -6,8 +6,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(":core-api"))
-    implementation(project(":core-impl"))
+    implementation(project(":common"))
 
     implementation(libs.bundles.ktor.server)
     implementation(libs.koin.ktor)
@@ -18,5 +17,5 @@ dependencies {
 }
 
 application {
-    mainClass.set("com.github.evgenius1424.ApplicationKt")
+    mainClass.set("io.github.evgenius1424.kotlingradle.ApplicationKt")
 }

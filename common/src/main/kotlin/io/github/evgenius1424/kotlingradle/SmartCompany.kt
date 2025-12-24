@@ -1,4 +1,4 @@
-package com.github.evgenius1424
+package io.github.evgenius1424.kotlingradle
 
 class SmartCompany : Company {
     private val employees = arrayListOf<Employee>()

@@ -1,4 +1,4 @@
-package com.github.evgenius1424
+package io.github.evgenius1424.kotlingradle
 
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
