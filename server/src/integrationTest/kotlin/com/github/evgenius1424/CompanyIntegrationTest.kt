@@ -9,7 +9,6 @@ import org.koin.test.get
 import org.koin.test.junit5.KoinTestExtension
 
 internal class CompanyIntegrationTest : KoinTest {
-
     @RegisterExtension
     @JvmField
     val koinTestExtension = KoinTestExtension.create(KoinApplication::configureDI)
