@@ -9,16 +9,12 @@ dependencies {
     implementation(project(":core-api"))
     implementation(project(":core-impl"))
 
-    implementation(Dependencies.Ktor.ktorCore)
-    implementation(Dependencies.Ktor.ktorServerNetty)
-    implementation(Dependencies.Ktor.ktorSerialization)
+    implementation(libs.bundles.ktor.server)
+    implementation(libs.koin.ktor)
+    implementation(libs.logback.classic)
 
-    implementation(Dependencies.Koin.koinKtor)
-
-    implementation(Dependencies.Logging.logback)
-
-    integrationTestImplementation(Dependencies.Ktor.ktorServerTestHost)
-    integrationTestImplementation(Dependencies.Koin.koinTest)
+    testImplementation(libs.ktor.server.test.host)
+    testImplementation(libs.koin.test.junit5)
 }
 
 application {

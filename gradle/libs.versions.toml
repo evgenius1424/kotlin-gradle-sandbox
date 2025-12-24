@@ -1,0 +1,62 @@
+[versions]
+kotlin = "2.0.21"
+ktor = "3.0.1"
+koin = "4.0.0"
+logback = "1.5.15"
+junit = "5.11.3"
+assertj = "3.26.3"
+kotlinx-serialization = "1.7.3"
+
+# Plugin versions
+ktlint-gradle = "12.1.2"
+detekt = "1.23.7"
+shadow = "8.1.1"
+kotlin-serialization = "2.0.21"
+artifactory = "5.2.5"
+
+# Plugin dependencies (for build-logic)
+kotlin-gradlePlugin = "2.0.21"
+
+[libraries]
+# Ktor
+ktor-server-core = { group = "io.ktor", name = "ktor-server-core", version.ref = "ktor" }
+ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty", version.ref = "ktor" }
+ktor-server-content-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
+ktor-server-test-host = { group = "io.ktor", name = "ktor-server-test-host", version.ref = "ktor" }
+
+# Koin
+koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin" }
+koin-test-junit5 = { group = "io.insert-koin", name = "koin-test-junit5", version.ref = "koin" }
+
+# Logging
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+
+# Testing
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+
+# Serialization
+kotlinx-serialization-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-core", version.ref = "kotlinx-serialization" }
+
+# Plugin dependencies (for build-logic)
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin-gradlePlugin" }
+kotlin-serialization-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlin-gradlePlugin" }
+ktlint-gradlePlugin = { group = "org.jlleitschuh.gradle", name = "ktlint-gradle", version.ref = "ktlint-gradle" }
+detekt-gradlePlugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+shadow-gradlePlugin = { group = "com.github.johnrengelman", name = "shadow", version.ref = "shadow" }
+artifactory-gradlePlugin = { group = "org.jfrog.buildinfo", name = "build-info-extractor-gradle", version.ref = "artifactory" }
+
+[bundles]
+ktor-server = ["ktor-server-core", "ktor-server-netty", "ktor-server-content-negotiation", "ktor-serialization-kotlinx-json"]
+testing = ["junit-jupiter-api", "assertj-core"]
+testing-runtime = ["junit-jupiter-engine"]
+
+[plugins]
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin-serialization" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint-gradle" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+shadow = { id = "com.github.johnrengelman.shadow", version.ref = "shadow" }
+artifactory = { id = "com.jfrog.artifactory", version.ref = "artifactory" }
