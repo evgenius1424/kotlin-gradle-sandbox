@@ -2,36 +2,34 @@ package io.github.evgenius1424.kotlingradle
 
 import io.ktor.serialization.kotlinx.json.json
 import io.ktor.server.application.Application
-import io.ktor.server.application.call
 import io.ktor.server.application.install
 import io.ktor.server.netty.EngineMain
 import io.ktor.server.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.server.plugins.di.DI
+import io.ktor.server.plugins.di.dependencies
 import io.ktor.server.response.respond
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
-import org.koin.core.KoinApplication
-import org.koin.core.context.GlobalContext.startKoin
-import org.koin.dsl.module
-import org.koin.ktor.ext.inject
 
 fun main(args: Array<String>) = EngineMain.main(args)
 
 fun Application.module() {
-    startKoin {
-        configureDI()
-    }
+    configureDI()
     configureSerialization()
     configureRouting()
 }
 
-fun KoinApplication.configureDI() {
-    modules(applicationModule)
-}
+fun Application.configureDI() {
+    val company = SmartCompany()
+    val employeeService = EmployeeServiceImpl(company)
 
-val applicationModule =
-    module {
-        single<Company> { SmartCompany() }
+    install(DI)
+
+    dependencies {
+        provide<Company> { company }
+        provide<EmployeeService> { employeeService }
     }
+}
 
 fun Application.configureSerialization() {
     install(ContentNegotiation) {
@@ -41,10 +39,14 @@ fun Application.configureSerialization() {
 
 fun Application.configureRouting() {
     routing {
-        val company by inject<Company>()
-
         get("/api/v1/employees") {
-            call.respond(company.getEmployees())
+            val employeeService: EmployeeService by dependencies
+            call.respond(employeeService.getAllEmployees())
+        }
+
+        get("/api/v1/company") {
+            val company: Company by dependencies
+            call.respond(mapOf("employees" to company.getEmployees()))
         }
     }
 }

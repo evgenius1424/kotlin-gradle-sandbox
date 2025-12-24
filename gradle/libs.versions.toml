@@ -1,7 +1,6 @@
 [versions]
-kotlin = "2.0.21"
-ktor = "3.0.1"
-koin = "4.0.0"
+kotlin = "2.2.21"
+ktor = "3.3.3"
 logback = "1.5.15"
 junit = "5.11.3"
 assertj = "3.26.3"
@@ -11,11 +10,11 @@ kotlinx-serialization = "1.7.3"
 ktlint-gradle = "12.1.2"
 detekt = "1.23.7"
 shadow = "8.1.1"
-kotlin-serialization = "2.0.21"
+kotlin-serialization = "2.2.21"
 artifactory = "5.2.5"
 
 # Plugin dependencies (for build-logic)
-kotlin-gradlePlugin = "2.0.21"
+kotlin-gradlePlugin = "2.2.21"
 
 [libraries]
 # Ktor
@@ -24,10 +23,8 @@ ktor-server-netty = { group = "io.ktor", name = "ktor-server-netty", version.ref
 ktor-server-content-negotiation = { group = "io.ktor", name = "ktor-server-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 ktor-server-test-host = { group = "io.ktor", name = "ktor-server-test-host", version.ref = "ktor" }
+ktor-server-di = { group = "io.ktor", name = "ktor-server-di", version.ref = "ktor" }
 
-# Koin
-koin-ktor = { group = "io.insert-koin", name = "koin-ktor", version.ref = "koin" }
-koin-test-junit5 = { group = "io.insert-koin", name = "koin-test-junit5", version.ref = "koin" }
 
 # Logging
 logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
@@ -35,6 +32,7 @@ logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.
 # Testing
 junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit" }
 junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version = "1.11.3" }
 assertj-core = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
 
 # Serialization
@@ -49,9 +47,9 @@ shadow-gradlePlugin = { group = "com.github.johnrengelman", name = "shadow", ver
 artifactory-gradlePlugin = { group = "org.jfrog.buildinfo", name = "build-info-extractor-gradle", version.ref = "artifactory" }
 
 [bundles]
-ktor-server = ["ktor-server-core", "ktor-server-netty", "ktor-server-content-negotiation", "ktor-serialization-kotlinx-json"]
+ktor-server = ["ktor-server-core", "ktor-server-netty", "ktor-server-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-server-di"]
 testing = ["junit-jupiter-api", "assertj-core"]
-testing-runtime = ["junit-jupiter-engine"]
+testing-runtime = ["junit-jupiter-engine", "junit-platform-launcher"]
 
 [plugins]
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
