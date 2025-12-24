@@ -5,7 +5,7 @@ import org.gradle.kotlin.dsl.named
 import org.gradle.testing.jacoco.plugins.JacocoPluginExtension
 import org.gradle.testing.jacoco.tasks.JacocoReport
 
-class JacocoConventionsPlugin : Plugin<Project> {
+class CoverageConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {

@@ -2,11 +2,11 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.dependencies
 
-class SerializationConventionsPlugin : Plugin<Project> {
+class SerializationConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.github.evgenius1424.kotlin-conventions")
+                apply("evgenius1424.kotlin.jvm")
                 apply("org.jetbrains.kotlin.plugin.serialization")
             }
 

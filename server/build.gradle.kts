@@ -1,8 +1,6 @@
 
 plugins {
-    id("com.github.evgenius1424.kotlin-project-conventions")
-    id("com.github.evgenius1424.application-conventions")
-    id("com.github.evgenius1424.shadow-conventions")
+    id("evgenius1424.kotlin.application")
 }
 
 dependencies {

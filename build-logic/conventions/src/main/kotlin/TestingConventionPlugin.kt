@@ -4,11 +4,11 @@ import org.gradle.api.tasks.testing.Test
 import org.gradle.kotlin.dsl.dependencies
 import org.gradle.kotlin.dsl.named
 
-class TestingConventionsPlugin : Plugin<Project> {
+class TestingConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.github.evgenius1424.kotlin-conventions")
+                apply("evgenius1424.kotlin.jvm")
             }
 
             tasks.named<Test>("test") {

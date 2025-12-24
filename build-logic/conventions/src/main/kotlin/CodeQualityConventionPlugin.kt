@@ -1,12 +1,12 @@
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 
-class IntegrationTestingConventionsPlugin : Plugin<Project> {
+class CodeQualityConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             with(pluginManager) {
-                apply("com.github.evgenius1424.kotlin-conventions")
-                apply("jvm-test-suite")
+                apply("org.jlleitschuh.gradle.ktlint")
+                apply("io.gitlab.arturbosch.detekt")
             }
         }
     }
