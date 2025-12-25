@@ -5,6 +5,7 @@ plugins {
 
 dependencies {
     implementation(project(":common"))
+    implementation(libs.kotlinx.datetime)
 
     implementation(libs.bundles.ktor.server)
     implementation(libs.logback.classic)

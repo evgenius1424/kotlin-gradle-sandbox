@@ -8,39 +8,39 @@ import io.ktor.server.testing.testApplication
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonArray
 import kotlinx.serialization.json.jsonObject
+import kotlinx.serialization.json.jsonPrimitive
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-internal class CompanyIntegrationTest {
-
+internal class IssuesIntegrationTest {
     @Test
-    fun `get company employees returns correct data`() =
+    fun `get issues returns correct data`() =
         testApplication {
             application {
                 module()
             }
 
-            client.get("/api/v1/employees").apply {
+            client.get("/api/v1/issues").apply {
                 assertThat(status).isEqualTo(HttpStatusCode.OK)
                 val responseText = bodyAsText()
                 val json = Json.parseToJsonElement(responseText).jsonArray
-                assertThat(json.size).isEqualTo(3) // Initial employees
+                assertThat(json.size).isEqualTo(3) // Initial issues
             }
         }
 
     @Test
-    fun `get company data returns correct structure`() =
+    fun `get issues count returns correct structure`() =
         testApplication {
             application {
                 module()
             }
 
-            client.get("/api/v1/company").apply {
+            client.get("/api/v1/issues/count").apply {
                 assertThat(status).isEqualTo(HttpStatusCode.OK)
                 val responseText = bodyAsText()
                 val json = Json.parseToJsonElement(responseText).jsonObject
-                val employees = json["employees"]?.jsonArray
-                assertThat(employees?.size).isEqualTo(3)
+                val count = json["count"]?.jsonPrimitive?.content?.toInt()
+                assertThat(count).isEqualTo(3)
             }
         }
 }
