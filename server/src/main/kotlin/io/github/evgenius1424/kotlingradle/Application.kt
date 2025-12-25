@@ -14,7 +14,6 @@ import io.ktor.server.plugins.di.dependencies
 import io.ktor.server.response.respond
 import io.ktor.server.routing.get
 import io.ktor.server.routing.routing
-import kotlinx.datetime.Instant
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
@@ -53,7 +52,6 @@ fun Application.configureSerialization() {
                 serializersModule =
                     SerializersModule {
                         contextual(UUIDSerializer)
-                        contextual(InstantSerializer)
                     }
             },
         )
@@ -83,15 +81,4 @@ object UUIDSerializer : KSerializer<UUID> {
     ) = encoder.encodeString(value.toString())
 
     override fun deserialize(decoder: Decoder): UUID = UUID.fromString(decoder.decodeString())
-}
-
-object InstantSerializer : KSerializer<Instant> {
-    override val descriptor: SerialDescriptor = PrimitiveSerialDescriptor("Instant", PrimitiveKind.STRING)
-
-    override fun serialize(
-        encoder: Encoder,
-        value: Instant,
-    ) = encoder.encodeString(value.toString())
-
-    override fun deserialize(decoder: Decoder): Instant = Instant.parse(decoder.decodeString())
 }
